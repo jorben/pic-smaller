@@ -9,6 +9,7 @@ const defaultLang = "en-US";
 
 export const langList: MenuProps["items"] = [
   { key: "en-US", label: "English" },
+  { key: "fr-FR", label: "Français" },
   { key: "ko-KR", label: "한국인" },
   { key: "ja-JP", label: "日本語" },
   { key: "zh-TW", label: "繁體中文" },
@@ -24,7 +25,7 @@ function getLang() {
 }
 
 async function setLocaleData(lang: string) {
-  let importer: any = locales[`/src/locales/${lang}.ts`];
+  let importer = locales[`/src/locales/${lang}.ts`];
   if (!importer) {
     importer = locales[`/src/locales/${defaultLang}.ts`];
   }
